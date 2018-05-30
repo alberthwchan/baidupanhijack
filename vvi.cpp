@@ -31,7 +31,7 @@ int main() {
     for (vvi_iterator = vvi.begin(); vvi_iterator != vvi.end(); ++vvi_iterator) {
         //cout << &vvi_iterator[vvi_iterator - (*vvi_iterator).begin()] << " ";
         for (vi_iterator = (*vvi_iterator).begin(); vi_iterator != (*vvi_iterator).end(); ++vi_iterator) {
-            cout << *vi_iterator<<":" <<  (vi_iterator - (*vvi_iterator).begin()) << ":" << &vi_iterator[vi_iterator - (*vvi_iterator).begin()] << " ";
+            cout << *vi_iterator<<":" <<  (vi_iterator - (*vvi_iterator).begin()) <<"("<<&(*vi_iterator)<<"-"<<&(*((*vvi_iterator).begin()))<<")"<< ":" << &vi_iterator[vi_iterator - (*vvi_iterator).begin()] << " ";
         }
         cout << endl;
     }
