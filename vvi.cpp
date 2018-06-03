@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    vector<int> vi1, vi2;
+    vector<int> vi1, vi2, viinitial;
     vector<vector<int> > vvi;
     vector<vector<int> >::iterator vvi_iterator;
     vector<int>::iterator vi_iterator, vi2_iterator, vi3_iterator;
@@ -30,8 +30,9 @@ int main() {
 
     for (vvi_iterator = vvi.begin(); vvi_iterator != vvi.end(); ++vvi_iterator) {
         //cout << &vvi_iterator[vvi_iterator - (*vvi_iterator).begin()] << " ";
+        viinitial = vvi_iterator;
         for (vi_iterator = (*vvi_iterator).begin(); vi_iterator != (*vvi_iterator).end(); ++vi_iterator) {
-            cout << *vi_iterator<<":" <<  (vi_iterator - (*vvi_iterator).begin()) <<"("<<&(*vi_iterator)<<"-"<<&(*((*vvi_iterator).begin()))<<")"<< ":" << &vi_iterator[vi_iterator - (*vvi_iterator).begin()] << " ";
+            cout << *vi_iterator<<":" <<  (vi_iterator - (*vvi_iterator).begin()) <<"("<<&(*vi_iterator)<<"-"<<&(*((*vvi_iterator).begin()))<<")"<< ":" << &viinitial[vi_iterator - (*vvi_iterator).begin()] << " ";
         }
         cout << endl;
     }
